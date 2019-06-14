@@ -24,6 +24,12 @@ const capabilities = {
   user: ['read'],
 };
 
+users.virtual('roles', {
+  ref: 'roles',
+  localField: 'role',
+  foreignFeild: 'capabilities',
+});
+
 users.pre('save', function(next) {
   bcrypt.hash(this.password, 10)
     .then(hashedPassword => {

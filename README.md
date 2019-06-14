@@ -5,9 +5,9 @@
 ### Author: Student/Group Name: Ed
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
+* [submission PR](https://github.com/yourname-401-advanced-javascript/lab-14/pull/1)
 * [travis](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
+* [back-end](https://rocky-shore-73294.herokuapp.com/) (when applicable)
 * [front-end](http://xyz.com) (when applicable)
 
 #### Documentation

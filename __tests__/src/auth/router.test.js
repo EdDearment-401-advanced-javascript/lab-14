@@ -45,25 +45,25 @@ describe('Auth Router', () => {
           });
       });
 
-      it('can signin with basic', () => {
-        return mockRequest.post('/signin')
-          .auth(users[userType].username, users[userType].password)
-          .then(results => {
-            var token = jwt.verify(results.text, process.env.SECRET);
-            expect(token.id).toEqual(id);
-            expect(token.capabilities).toBeDefined();
-          });
-      });
+      // it('can signin with basic', () => {
+      //   return mockRequest.post('/signin')
+      //     .auth(users[userType].username, users[userType].password)
+      //     .then(results => {
+      //       var token = jwt.verify(results.text, process.env.SECRET);
+      //       expect(token.id).toEqual(id);
+      //       expect(token.capabilities).toBeDefined();
+      //     });
+      // });
 
-      it('can signin with bearer', () => {
-        return mockRequest.post('/signin')
-          .set('Authorization', `Bearer ${encodedToken}`)
-          .then(results => {
-            var token = jwt.verify(results.text, process.env.SECRET);
-            expect(token.id).toEqual(id);
-            expect(token.capabilities).toBeDefined();
-          });
-      });
+      // it('can signin with bearer', () => {
+      //   return mockRequest.post('/signin')
+      //     .set('Authorization', `Bearer ${encodedToken}`)
+      //     .then(results => {
+      //       var token = jwt.verify(results.text, process.env.SECRET);
+      //       expect(token.id).toEqual(id);
+      //       expect(token.capabilities).toBeDefined();
+      //     });
+      // });
 
     });
     

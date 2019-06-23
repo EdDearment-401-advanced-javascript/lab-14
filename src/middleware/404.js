@@ -4,7 +4,7 @@
  * @module 404_Error
  */
 
- /**
+/**
   * @param {object} req Request from User
   * @param {object} res Response for User
   * @param {object} next middleware call

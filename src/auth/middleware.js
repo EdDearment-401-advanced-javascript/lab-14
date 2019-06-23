@@ -57,13 +57,13 @@ module.exports = capability => {
         .catch(_authError);
     }
     
-/**
- *
- * @method _authenticate
- * @param {*} user
- * @desc -Authenticates the User based on capabilities
- */
-function _authenticate(user) {
+    /**
+    *
+    * @method _authenticate
+    * @param {*} user
+    * @desc -Authenticates the User based on capabilities
+    */
+    function _authenticate(user) {
       if ( user && (!capability || (user.can(capability))) ) { //If user is true they can veiw 
         req.user = user;
         req.token = user.generateToken();

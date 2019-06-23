@@ -16,7 +16,7 @@ const users = new mongoose.Schema({
   password: {type:String, required:true},
   email: {type: String},
   role: {type: String, default:'user', enum: ['admin','editor','user']},
-});
+}, {toObject:{virtuals:true}, toJSON:{virtuals:true} });
 
 const capabilities = {
   admin: ['create','read','update','delete'],
@@ -24,10 +24,20 @@ const capabilities = {
   user: ['read'],
 };
 
-users.virtual('roles', {
+users.virtual('acl', {
   ref: 'roles',
   localField: 'role',
-  foreignFeild: 'capabilities',
+  foreignField: 'role',
+  justOne: true,
+});
+
+users.pre('findOne', function() {
+  try {
+    this.populate('acl');
+  }
+  catch(e) {
+    throw new Error(e.message);
+  }
 });
 
 users.pre('save', function(next) {
@@ -49,6 +59,8 @@ users.statics.createFromOauth = function(email) {
       return user;
     })
     .catch( error => {
+      error = 'Giving birth to a new User';
+      console.log(error);
       let username = email;
       let password = 'none';
       return this.create({username, password, email});

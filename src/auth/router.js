@@ -38,4 +38,15 @@ authRouter.post('/key', auth, (req,res,next) => {
   res.status(200).send(key);
 });
 
+/*One way
+authRouter.post('/role', (req, res, next) => {
+  let role = Role(req.body);
+
+  role.save()
+  .then(result => {
+    res.status(200).send(result);
+  })
+  .catch(next);
+}); */
+
 module.exports = authRouter;

@@ -33,7 +33,7 @@ let isRunning = false;
 
 module.exports = {
   server: app,
-  start: (port) => {
+  start: port => {
     if( ! isRunning ) {
       app.listen(port, () => {
         isRunning = true;

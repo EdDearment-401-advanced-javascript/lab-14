@@ -41,7 +41,7 @@ module.exports = (capability) => {
     }
 
     function _authenticate(user) {
-      if ( user && (!capability || (user.can(capability))) ) {
+      if ( user && (!capability || (user.can(capability))) ) { //If user is true they can veiw 
         req.user = user;
         req.token = user.generateToken();
         next();

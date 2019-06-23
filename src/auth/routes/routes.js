@@ -1,10 +1,9 @@
 'use strict';
 
 const express = require('express');
+const newRouter = express.Router();
 const auth = require('../middleware.js');
 const Role = require('../users-model');
-
-const newRouter = express.Router();
 
 const capabilities = {
   admin: ['create', 'read', 'update', 'delete', 'superuser'],
@@ -21,7 +20,7 @@ newRouter.post('/role', (req, res) => {
   });
   Promise.all(saves);
   res.status(200).send('Roles created');
-})
+});
 
 newRouter.get('/public-stuff', (req, res, next) => {
   res.status(200).send('This parrot is dead!');
@@ -40,19 +39,19 @@ newRouter.post('/create-a-thing', auth('create'), (req, res, next) => {
 });
 
 newRouter.put('/update', auth('update'), (req, res, next) => {
-  res.status(200).send('We are the knights that say Ni')
+  res.status(200).send('We are the knights that say Ni');
 });
 
 newRouter.patch('/jp', auth(),  (req, res, next) => {
-  res.status(200).send('Alright then this is too silly.')
+  res.status(200).send('Alright then this is too silly.');
 });
 
 newRouter.delete('/bye-bye', auth(), (req, res, next) => {
-  res.status(200).send('Tis but a flesh wound')
+  res.status(200).send('Tis but a flesh wound');
 });
 
 newRouter.get('/everything', auth('superuser'), (req, res, next) => {
-  res.status(200).send('I spy with my little eye somthing...')
+  res.status(200).send('I spy with my little eye somthing...');
 });
 
 module.exports = newRouter;

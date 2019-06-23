@@ -20,7 +20,7 @@ authRouter.post('/signup', (req, res, next) => {
     .catch(next);
 });
 
-authRouter.get('/signin', auth(), (req, res, next) => {
+authRouter.get('/signin', auth(), (req, res) => {
   res.cookie('auth', req.token);
   res.send(req.token);
 });
@@ -37,16 +37,5 @@ authRouter.post('/key', auth, (req,res,next) => {
   let key = req.user.generateKey();
   res.status(200).send(key);
 });
-
-/*One way
-authRouter.post('/role', (req, res, next) => {
-  let role = Role(req.body);
-
-  role.save()
-  .then(result => {
-    res.status(200).send(result);
-  })
-  .catch(next);
-}); */
 
 module.exports = authRouter;

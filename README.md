@@ -5,43 +5,37 @@
 ### Author: Student/Group Name: Ed
 
 ### Links and Resources
-* [submission PR](https://github.com/yourname-401-advanced-javascript/lab-14/pull/1)
-* [travis](http://xyz.com)
+* [submission PR](https://github.com/EdDearment-401-advanced-javascript/lab-14/pull/1)
+* [travis](https://travis-ci.com)
 * [back-end](https://rocky-shore-73294.herokuapp.com/) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
 
 #### Documentation
-* [api docs](http://xyz.com) (API servers)
-* [jsdoc](http://xyz.com) (Server assignments)
-* [styleguide](http://xyz.com) (React assignments)
-
-### Modules
-#### `modulename.js`
-##### Exported Values and Methods
-
-###### `foo(thing) -> string`
-Usage Notes or examples
-
-###### `bar(array) -> array`
-Usage Notes or examples
+* Swagger present but crashes app
+* [jsdoc](file:///Users/Ed/codefellows/401/labs/lab-14/docs/index.html) (Not complete)
 
 ### Setup
 #### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
+* `PORT` PORT=3000
+* `SECRET` SECRET=tiliqua
+* `GOOGLE_CLIENT_ID`GOOGLE_CLIENT_ID=YourClientIdHere
+* `GOOGLE_CLIENT_SECRET`GOOGLE_CLIENT_SECRET=YourClientSecretHere
+* `MONGODB_URI` MONGODB_URI=mongodb://localhost:27017/lab14
+* `SINGLE_USE_TOKENS` SINGLE_USE_TOKENS=false
+* `EXPIRE_TIME` EXPIRE_TIME=15m- Port Number
 
 #### Running the app
+* On Lab 14
+*`npm start`
+* On lab 13
+* -Lab 13 Front End
+* -HardCode Google Client ID in the Approriate Spot
 * `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
+
   
 #### Tests
 * How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
+npm run test
+npm run lint
 
 #### UML
-![](./assets/----.jpg)
-# lab14-accessControl
+![](https://raw.githubusercontent.com/EdDearment-401-advanced-javascript/lab-14/dev/assets/Lab14UMl.JPG)

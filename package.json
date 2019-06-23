@@ -8,7 +8,7 @@
     "watch": "nodemon index.js",
     "test-watch": "jest --watchAll",
     "test": "jest",
-    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json .",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json . && open ./docs/index.html",
     "lint": "eslint index.js ./src ./__tests__"
   },
   "jest": {
@@ -24,6 +24,7 @@
     "dotenv": "^6.1.0",
     "eslint": "^6.0.0",
     "express": "^4.16.3",
+    "express-swagger-generator": "^1.1.15",
     "jest": "^23.6.0",
     "jsdoc": "^3.6.2",
     "jsonwebtoken": "^8.4.0",

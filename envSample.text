@@ -1,0 +1,7 @@
+PORT=3000
+SECRET=tiliqua
+GOOGLE_CLIENT_ID=YourClientIdHere
+GOOGLE_CLIENT_SECRET=YourClientSecretHere
+MONGODB_URI=mongodb://localhost:27017/lab14
+SINGLE_USE_TOKENS=false
+EXPIRE_TIME=15m
